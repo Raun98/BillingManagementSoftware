@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome To The Antstack Tax System</h1>
+    <form action="calculate_bill" method="POST">
+    {% csrf_token %}
+    <div class="rendered-form">
+    <div class="formbuilder-text form-group field-item">
+        <label for="item" class="formbuilder-text-label">item<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Please Enter Item Name Here">?</span></label>
+        <input type="text" placeholder="Item Name" class="form-control" name="item" access="false" id="item" title="Please Enter Item Name Here" required="required" aria-required="true">
+    </div>
+    <div class="formbuilder-select form-group field-itemCategory">
+        <label for="itemCategory" class="formbuilder-select-label">itemCategory<span class="formbuilder-required">*</span></label>
+        <select class="form-control" name="itemCategory" id="itemCategory" required="required" aria-required="true">
+            <option value="option-1" selected="true" id="itemCategory-0">Medicine</option>
+            <option value="option-2" id="itemCategory-1">Food</option>
+            <option value="option-3" id="itemCategory-2">Book</option>
+            <option value="option-4" id="itemCategory-3">Imported</option>
+            <option value="option-5" id="itemCategory-4">Music</option>
+            <option value="option-6" id="itemCategory-5">Clothes</option>
+        </select>
+    </div>
+    <div class="formbuilder-number form-group field-quantity">
+        <label for="quantity" class="formbuilder-number-label">quantity<span class="formbuilder-required">*</span></label>
+        <input type="number" class="form-control" name="quantity" access="false" step="1" min="0" id="quantity" required="required" aria-required="true">
+    </div>
+    <div class="formbuilder-number form-group field-price">
+        <label for="price" class="formbuilder-number-label">price<span class="formbuilder-required">*</span></label>
+        <input type="number" class="form-control" name="price" access="false" step="50" min="0" id="price" required="required" aria-required="true">
+    </div><div class="rendered-form">
+    <div class="formbuilder-button form-group field-Submit">
+        <button type="submit" class="btn-success btn" name="Add Item" access="false" style="success" id="Add item">Add Item</button>
+    </div>
+    <div class="rendered-form">
+    <div class="formbuilder-button form-group field-Reset">
+        <button type="reset" class="btn-default btn" name="Reset" access="false" style="default" id="Reset">Reset</button>
+    </div>
+</div>
+
+    </form>
+    <form action="show_bill" method="GET">
+        <div class="rendered-form">
+    <div class="formbuilder-button form-group field-Generate-Bill">
+        <button type="submit" class="btn-primary btn" name="Generate-Bill" access="false" style="primary" id="Generate-Bill">Generate Bill</button>
+    </div>
+</div>
+    </form>
+</div>
+</div>
+</body>
+</html>
